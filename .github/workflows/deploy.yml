@@ -5,6 +5,8 @@ on:
     branches:
       - main
   workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
 
 permissions:
   contents: read
@@ -43,6 +45,8 @@ jobs:
         run: npm ci
       - name: Install Quartz plugins
         run: npx quartz plugin install --from-config
+      - name: Generate Skills page
+        run: python3 scripts/sync_skills.py
       - name: Build Quartz
         run: npx quartz build
       - name: Upload artifact

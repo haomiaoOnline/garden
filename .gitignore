@@ -12,3 +12,6 @@ replit.nix
 .quartz/
 quartz/cli/tui/dist/
 .turbo/
+/content/技能库/index.md
+__pycache__/
+*.pyc
